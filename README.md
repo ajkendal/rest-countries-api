@@ -45,8 +45,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/ajkendal/rest-countries-api)
-- Live Site URL: [Add live site URL here](https://rest-countries-api-pi-six.vercel.app/)
+- Solution URL: [GitHub Repo](https://github.com/ajkendal/rest-countries-api)
+- Live Site URL: [Live Demo](https://rest-countries-api-ajkendal.vercel.app/)
 
 ## My process
 
@@ -98,4 +98,4 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - Website - [Amanda J Kendal-Brown](https://ajkendal.github.io/)
 - LinkedIn - [@akendalb](https://www.linkedin.com/in/akendalb)
 - GitHub - [@ajkendal](https://github.com/ajkendal/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ajkendal)
+- Frontend Mentor - [@ajkendal](https://www.frontendmentor.io/profile/ajkendal)
