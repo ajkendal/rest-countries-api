@@ -2,17 +2,19 @@
 @import 'tailwindcss';
 
 :root {
-  --color-grey-950: hsl(200, 15%, 8%);
-  --color-grey-400: hsl(0, 0%, 50%);
-  --color-grey-350: hsl(0, 0%, 59%);
-  --color-grey-300: hsl(0, 0%, 70%);
-  --color-grey-250: hsl(0, 0%, 77%);
-  --color-grey-50: hsl(0, 0%, 99%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-gray-950: hsl(200, 15%, 8%);
+  --color-gray-400: hsl(0, 0%, 50%);
+  --color-gray-350: hsl(0, 0%, 59%);
+  --color-gray-300: hsl(0, 0%, 70%);
+  --color-gray-250: hsl(0, 0%, 77%);
+  --color-gray-50: hsl(0, 0%, 99%);
+  --color-white: hsl(0, 0%, 100%);
   --color-blue-950: hsl(207, 26%, 17%);
   --color-blue-900: hsl(209, 23%, 22%);
 
-  --background: var(--color-grey-50);
-  --foreground: var(--color-blue-950);
+  --background: var(--color-gray-50);
+  --foreground: var(--color-gray-950);
 }
 
 :root {
@@ -23,14 +25,61 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-blue-950);
-    --foreground: var(--color-grey-50);
+    --foreground: var(--color-white);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  @apply fill-current;
+
+  @apply tracking-normal;
   font-family: 'Nunito Sans', sans-serif;
   font-optical-sizing: auto;
   font-variation-settings: 'wdth' 100, 'YTLC' 500;
+}
+
+body svg {
+  stroke: var(--foreground);
+}
+
+.text-preset-1 {
+  @apply text-3xl font-extrabold;
+}
+
+.text-preset-2 {
+  @apply text-2xl font-extrabold;
+}
+
+.text-preset-3 {
+  @apply text-lg font-extrabold;
+}
+
+.text-preset-4-semi-bold {
+  @apply text-base font-semibold;
+}
+
+.text-preset-4-light {
+  @apply text-base font-light;
+}
+
+.text-preset-5-regular {
+  @apply text-sm font-normal;
+}
+
+.text-preset-5-light {
+  @apply text-sm font-light;
+}
+
+.text-preset-6-semi-bold {
+  @apply text-xs font-semibold;
+}
+
+.text-preset-6-regular {
+  @apply text-xs font-normal;
+}
+
+.text-preset-light {
+  @apply text-xs font-light;
 }
