@@ -23,10 +23,20 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not(.light):not(.dark) {
     --background: var(--color-blue-950);
-    --foreground: var(--color-white);
+    --foreground: var(--color-grey-50);
   }
+}
+
+html.light {
+  --background: var(--color-gray-50);
+  --foreground: var(--color-gray-950);
+}
+
+html.dark {
+  --background: var(--color-blue-950);
+  --foreground: var(--color-gray-50);
 }
 
 body {
@@ -38,10 +48,6 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-optical-sizing: auto;
   font-variation-settings: 'wdth' 100, 'YTLC' 500;
-}
-
-body svg {
-  stroke: var(--foreground);
 }
 
 .text-preset-1 {
