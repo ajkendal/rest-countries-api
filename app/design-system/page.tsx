@@ -5,6 +5,7 @@ import {
   LightIcon,
   SearchIcon,
 } from '../icons/icons'
+import Header from '../components/Header'
 
 const typographyPresets = [
   {
@@ -64,40 +65,40 @@ const icons = [
 
 const colorPatches = [
   {
-    name: 'Grey 950',
+    name: 'Gray 950',
     className: 'bg-[#202c37]',
     hex: '#202c37',
-    variable: '--color-grey-950',
+    variable: '--color-gray-950',
   },
   {
-    name: 'Grey 400',
+    name: 'Gray 400',
     className: 'bg-[#7c7c7c]',
     hex: '#7c7c7c',
-    variable: '--color-grey-400',
+    variable: '--color-gray-400',
   },
   {
-    name: 'Grey 350',
+    name: 'Gray 350',
     className: 'bg-[#969696]',
     hex: '#969696',
-    variable: '--color-grey-350',
+    variable: '--color-gray-350',
   },
   {
-    name: 'Grey 300',
+    name: 'Gray 300',
     className: 'bg-[#b3b3b3]',
     hex: '#b3b3b3',
-    variable: '--color-grey-300',
+    variable: '--color-gray-300',
   },
   {
-    name: 'Grey 250',
+    name: 'Gray 250',
     className: 'bg-[#c4c4c4]',
     hex: '#c4c4c4',
-    variable: '--color-grey-250',
+    variable: '--color-gray-250',
   },
   {
-    name: 'Grey 50',
+    name: 'Gray 50',
     className: 'bg-[#fcfcfc] border',
     hex: '#fcfcfc',
-    variable: '--color-grey-50',
+    variable: '--color-gray-50',
   },
   {
     name: 'Blue 950',
@@ -224,91 +225,94 @@ const ExampleCard = ({ dark }: { dark?: boolean }) => (
 
 const DesignSystem = () => {
   return (
-    <main className='p-8 space-y-12'>
-      <h1 className='text-preset-1 mb-6'>Design System</h1>
+    <>
+      <Header />
+      <main className='p-8 space-y-12'>
+        <h1 className='text-preset-1 mb-6'>Design System</h1>
 
-      {/* Colors */}
-      <section>
-        <h2 className='text-preset-2 mb-4'>Color Tokens</h2>
-        <div className='flex flex-wrap gap-8'>
-          {colorPatches.map((color) => (
-            <div key={color.name} className='flex flex-col items-center'>
-              <div
-                className={`w-16 h-16 rounded ${color.className} border`}
-                title={color.variable}
-              />
-              <span className='mt-2 text-xs font-medium'>{color.name}</span>
-              <span className='text-xs text-gray-500'>{color.hex}</span>
-              <span className='text-[10px] text-gray-400'>
-                {color.variable}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Typography */}
-      <section>
-        <h2 className='text-preset-2 mb-4'>Typography Presets</h2>
-        <div className='space-y-4'>
-          {typographyPresets.map((preset) => (
-            <div key={preset.name}>
-              <span className={preset.name}>{preset.sample}</span>
-              <span className='ml-4 text-xs text-gray-500'>
-                {preset.label} ({preset.name})
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Icons */}
-      <section>
-        <h2 className='text-preset-2 mb-4'>Icons</h2>
-        <div className='flex gap-8 items-center'>
-          {icons.map((icon) => (
-            <div key={icon.name} className='flex flex-col items-center'>
-              <div className='w-8 h-8 flex items-center justify-center'>
-                {icon.component}
+        {/* Colors */}
+        <section>
+          <h2 className='text-preset-2 mb-4'>Color Tokens</h2>
+          <div className='flex flex-wrap gap-8'>
+            {colorPatches.map((color) => (
+              <div key={color.name} className='flex flex-col items-center'>
+                <div
+                  className={`w-16 h-16 rounded ${color.className} border`}
+                  title={color.variable}
+                />
+                <span className='mt-2 text-xs font-medium'>{color.name}</span>
+                <span className='text-xs text-gray-500'>{color.hex}</span>
+                <span className='text-[10px] text-gray-400'>
+                  {color.variable}
+                </span>
               </div>
-              <span className='mt-2 text-xs text-gray-500'>{icon.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* Components */}
-      <section>
-        <h2 className='text-preset-2 mb-4'>Components</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {/* Headers */}
-          <div className='space-y-4 bg-gray-50 p-4 rounded border'>
-            <ExampleHeader />
-            <ExampleHeader dark />
+        {/* Typography */}
+        <section>
+          <h2 className='text-preset-2 mb-4'>Typography Presets</h2>
+          <div className='space-y-4'>
+            {typographyPresets.map((preset) => (
+              <div key={preset.name}>
+                <span className={preset.name}>{preset.sample}</span>
+                <span className='ml-4 text-xs text-gray-500'>
+                  {preset.label} ({preset.name})
+                </span>
+              </div>
+            ))}
           </div>
-          {/* Search */}
-          <div className='space-y-4 bg-gray-50 p-4 rounded border'>
-            <ExampleSearch />
-            <ExampleSearch dark />
+        </section>
+
+        {/* Icons */}
+        <section>
+          <h2 className='text-preset-2 mb-4'>Icons</h2>
+          <div className='flex gap-8 items-center'>
+            {icons.map((icon) => (
+              <div key={icon.name} className='flex flex-col items-center'>
+                <div className='w-8 h-8 flex items-center justify-center'>
+                  {icon.component}
+                </div>
+                <span className='mt-2 text-xs text-gray-500'>{icon.name}</span>
+              </div>
+            ))}
           </div>
-          {/* Buttons */}
-          <div className='flex flex-col gap-4 bg-gray-50 p-4 rounded border'>
-            <ExampleButton />
-            <ExampleButton dark />
+        </section>
+
+        {/* Components */}
+        <section>
+          <h2 className='text-preset-2 mb-4'>Components</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            {/* Headers */}
+            <div className='space-y-4 bg-gray-50 p-4 rounded border'>
+              <ExampleHeader />
+              <ExampleHeader dark />
+            </div>
+            {/* Search */}
+            <div className='space-y-4 bg-gray-50 p-4 rounded border'>
+              <ExampleSearch />
+              <ExampleSearch dark />
+            </div>
+            {/* Buttons */}
+            <div className='flex flex-col gap-4 bg-gray-50 p-4 rounded border'>
+              <ExampleButton />
+              <ExampleButton dark />
+            </div>
+            {/* Dropdowns */}
+            <div className='flex flex-row gap-4 bg-gray-50 p-4 rounded border items-start'>
+              <ExampleDropdown />
+              <ExampleDropdown dark />
+            </div>
+            {/* Cards */}
+            <div className='flex gap-4 bg-gray-50 p-4 rounded border'>
+              <ExampleCard />
+              <ExampleCard dark />
+            </div>
           </div>
-          {/* Dropdowns */}
-          <div className='flex flex-row gap-4 bg-gray-50 p-4 rounded border items-start'>
-            <ExampleDropdown />
-            <ExampleDropdown dark />
-          </div>
-          {/* Cards */}
-          <div className='flex gap-4 bg-gray-50 p-4 rounded border'>
-            <ExampleCard />
-            <ExampleCard dark />
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   )
 }
 

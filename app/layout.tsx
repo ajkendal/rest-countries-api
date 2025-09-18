@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from './components/theme-provider'
-import './globals.css'
+import './styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'REST Country API | Amanda J Kendal-Brown',
@@ -18,7 +18,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
