@@ -20,14 +20,18 @@ const Header = () => {
         >
           <span className='group-hover:text-gray-300 flex items-center gap-2'>
             {theme === 'dark'
-              ? [
-                  <LightIcon key='1' aria-hidden='true' />,
-                  <p key='2'>Light Mode</p>,
-                ]
-              : [
-                  <DarkIcon key='1' aria-hidden='true' />,
-                  <p key='2'>Dark Mode</p>,
-                ]}
+              ? (
+                  <>
+                    <LightIcon aria-hidden='true' />
+                    <p>Light Mode</p>
+                  </>
+                )
+              : (
+                  <>
+                    <DarkIcon aria-hidden='true' />
+                    <p>Dark Mode</p>
+                  </>
+                )}
           </span>
         </button>
       </div>
