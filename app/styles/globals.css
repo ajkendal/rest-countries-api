@@ -22,13 +22,6 @@
   --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.light):not(.dark) {
-    --background: var(--color-blue-950);
-    --foreground: var(--color-grey-50);
-  }
-}
-
 html.light {
   --background: var(--color-gray-50);
   --foreground: var(--color-gray-950);

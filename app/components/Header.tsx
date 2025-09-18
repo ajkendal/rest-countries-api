@@ -18,15 +18,17 @@ const Header = () => {
           className='theme-toggle text-preset-6-semi-bold cursor-pointer group'
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
-          {theme === 'dark' ? (
-            <span className='group-hover:text-gray-300 flex items-center gap-2'>
-              <LightIcon aria-hidden='true' /> Light Mode
-            </span>
-          ) : (
-            <span className='group-hover:text-gray-300 flex items-center gap-2'>
-              <DarkIcon aria-hidden='true' /> Dark Mode
-            </span>
-          )}
+          <span className='group-hover:text-gray-300 flex items-center gap-2'>
+            {theme === 'dark'
+              ? [
+                  <LightIcon key='1' aria-hidden='true' />,
+                  <p key='2'>Light Mode</p>,
+                ]
+              : [
+                  <DarkIcon key='1' aria-hidden='true' />,
+                  <p key='2'>Dark Mode</p>,
+                ]}
+          </span>
         </button>
       </div>
     </header>

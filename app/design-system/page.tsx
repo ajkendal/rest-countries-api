@@ -65,40 +65,40 @@ const icons = [
 
 const colorPatches = [
   {
-    name: 'Grey 950',
+    name: 'Gray 950',
     className: 'bg-[#202c37]',
     hex: '#202c37',
-    variable: '--color-grey-950',
+    variable: '--color-gray-950',
   },
   {
-    name: 'Grey 400',
+    name: 'Gray 400',
     className: 'bg-[#7c7c7c]',
     hex: '#7c7c7c',
-    variable: '--color-grey-400',
+    variable: '--color-gray-400',
   },
   {
-    name: 'Grey 350',
+    name: 'Gray 350',
     className: 'bg-[#969696]',
     hex: '#969696',
-    variable: '--color-grey-350',
+    variable: '--color-gray-350',
   },
   {
-    name: 'Grey 300',
+    name: 'Gray 300',
     className: 'bg-[#b3b3b3]',
     hex: '#b3b3b3',
-    variable: '--color-grey-300',
+    variable: '--color-gray-300',
   },
   {
-    name: 'Grey 250',
+    name: 'Gray 250',
     className: 'bg-[#c4c4c4]',
     hex: '#c4c4c4',
-    variable: '--color-grey-250',
+    variable: '--color-gray-250',
   },
   {
-    name: 'Grey 50',
+    name: 'Gray 50',
     className: 'bg-[#fcfcfc] border',
     hex: '#fcfcfc',
-    variable: '--color-grey-50',
+    variable: '--color-gray-50',
   },
   {
     name: 'Blue 950',
