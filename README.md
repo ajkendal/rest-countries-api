@@ -14,6 +14,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Failsafe Data](#failsafe-data)
   - [Useful resources](#useful-resources)
 
 - [Author](#author)
@@ -47,6 +48,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Solution URL: [GitHub Repo](https://github.com/ajkendal/rest-countries-api)
 - Live Site URL: [Live Demo](https://rest-countries-api-ajkendal.vercel.app/)
+- Design System URL: [Design System](https://rest-countries-api-ajkendal.vercel.app/design-system)
 
 ## My process
 
@@ -88,6 +90,10 @@ const proudOfThisFunc = () => {
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
+
+### Failsafe Data
+
+If the REST Countries API is unavailable, this project will automatically use a local `data.json` file located in `public/json/data.json` as a fallback to ensure the app remains functional.
 
 ### Useful resources
 

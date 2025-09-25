@@ -5,7 +5,6 @@ import {
   LightIcon,
   SearchIcon,
 } from '../icons/icons'
-import Header from '../components/Header'
 
 const typographyPresets = [
   {
@@ -226,8 +225,7 @@ const ExampleCard = ({ dark }: { dark?: boolean }) => (
 const DesignSystem = () => {
   return (
     <>
-      <Header />
-      <main className='p-8 space-y-12'>
+      <main className='p-8 space-y-12 max-w-screen-xl mx-auto'>
         <h1 className='text-preset-1 mb-6'>Design System</h1>
 
         {/* Colors */}

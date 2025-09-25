@@ -75,3 +75,16 @@ body {
 .text-preset-light {
   @apply text-xs font-light;
 }
+
+.btn-primary {
+  @apply bg-white dark:bg-blue-900 shadow py-3 px-6 rounded-sm;
+  @apply text-base font-light;
+  @apply hover:brightness-95 dark:hover:brightness-125;
+}
+
+.btn-arrow {
+  @apply bg-white dark:bg-blue-900 shadow py-3 px-6 rounded-sm;
+  @apply text-base font-light;
+  @apply hover:brightness-95 dark:hover:brightness-125;
+  @apply flex items-center gap-2;
+}
