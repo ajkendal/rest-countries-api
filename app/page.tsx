@@ -30,7 +30,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className='max-w-screen-xl mx-auto my-10 w-11/12'>
+    <div className='max-w-screen-xl mx-auto my-10 w-11/12'>
       <FilterDiv countries={countries} onFilter={setFilteredCountries} />
       <LoadingIconDiv loading={loading} />
       <ErrorCard error={error} />
@@ -50,6 +50,6 @@ export default function Home() {
             ))}
           </div>
         ))}
-    </main>
+    </div>
   )
 }

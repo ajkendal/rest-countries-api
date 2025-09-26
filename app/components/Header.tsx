@@ -12,7 +12,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className='py-4 shadow transition-colors bg-white dark:bg-blue-900'>
+    <header className='fixed top-0 left-0 w-full z-50 py-4 shadow transition-colors bg-white dark:bg-blue-900'>
       <div className='max-w-screen-xl mx-auto flex justify-between items-center w-11/12'>
         <a href='/' className='text-preset-2'>
           Where in the world?
