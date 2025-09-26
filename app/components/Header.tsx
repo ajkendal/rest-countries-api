@@ -1,10 +1,15 @@
 'use client'
 import { useTheme } from 'next-themes'
-
+import { useEffect, useState } from 'react'
 import { DarkIcon, LightIcon } from '../icons/icons'
 
 const Header = () => {
   const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header className='py-4 shadow transition-colors bg-white dark:bg-blue-900'>
@@ -13,25 +18,29 @@ const Header = () => {
           Where in the world?
         </a>
 
-        <button
-          aria-label='Toggle Theme Mode'
-          className='theme-toggle text-preset-6-semi-bold cursor-pointer group'
-          onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-        >
-          <span className='group-hover:text-gray-400 group-hover:dark:text-gray-300 flex items-center gap-2'>
-            {resolvedTheme === 'dark' ? (
-              <>
-                <LightIcon aria-hidden='true' />
-                <span>Light Mode</span>
-              </>
-            ) : (
-              <>
-                <DarkIcon aria-hidden='true' />
-                <span>Dark Mode</span>
-              </>
-            )}
-          </span>
-        </button>
+        {mounted && (
+          <button
+            aria-label='Toggle Theme Mode'
+            className='theme-toggle text-preset-6-semi-bold cursor-pointer group'
+            onClick={() =>
+              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+            }
+          >
+            <span className='group-hover:text-gray-400 group-hover:dark:text-gray-300 flex items-center gap-2'>
+              {resolvedTheme === 'dark' ? (
+                <>
+                  <LightIcon aria-hidden='true' />
+                  <span>Light Mode</span>
+                </>
+              ) : (
+                <>
+                  <DarkIcon aria-hidden='true' />
+                  <span>Dark Mode</span>
+                </>
+              )}
+            </span>
+          </button>
+        )}
       </div>
     </header>
   )

@@ -95,3 +95,72 @@ export const Arrow = () => (
     </g>
   </svg>
 )
+
+export const LoadingIcon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='200px'
+    height='200px'
+    className='block mx-auto'
+    viewBox='0 0 200 200'
+  >
+    <circle strokeWidth='15' r='15' cx='40' cy='65'>
+      <animate
+        attributeName='cy'
+        calcMode='spline'
+        dur='2'
+        values='65;135;65;'
+        keySplines='.5 0 .5 1;.5 0 .5 1'
+        repeatCount='indefinite'
+        begin='-.4'
+      ></animate>
+    </circle>
+    <circle strokeWidth='15' r='15' cx='100' cy='65'>
+      <animate
+        attributeName='cy'
+        calcMode='spline'
+        dur='2'
+        values='65;135;65;'
+        keySplines='.5 0 .5 1;.5 0 .5 1'
+        repeatCount='indefinite'
+        begin='-.2'
+      ></animate>
+    </circle>
+    <circle strokeWidth='15' r='15' cx='160' cy='65'>
+      <animate
+        attributeName='cy'
+        calcMode='spline'
+        dur='2'
+        values='65;135;65;'
+        keySplines='.5 0 .5 1;.5 0 .5 1'
+        repeatCount='indefinite'
+        begin='0'
+      ></animate>
+    </circle>
+  </svg>
+)
+
+export const ErrorIcon = () => (
+  <svg
+    className='block mx-auto my-5'
+    width='50px'
+    height='50px'
+    viewBox='0 0 32 32'
+    xmlSpace='preserve'
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'
+  >
+    <g>
+      <g id='Error_1_'>
+        <g id='Error'>
+          <circle cx='16' cy='16' id='BG' r='16' className='fill-red-500' />
+          <path
+            d='M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z'
+            id='Exclamatory_x5F_Sign'
+            className='fill-red-100'
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+)
