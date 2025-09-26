@@ -8,7 +8,7 @@ import { Arrow } from '../icons/icons'
 
 const CountryPageContent = () => {
   const [allCountries, setAllCountries] = useState<Country[]>([])
-  // Fetch all countries for border name lookup
+
   useEffect(() => {
     fetch('/api/countries')
       .then((res) => res.json())
@@ -64,7 +64,7 @@ const CountryPageContent = () => {
               className='w-full md:w-1/2 lg:w-1/2 h-auto object-contain rounded'
             />
             <div className='w-full md:w-1/2 lg:w-1/2 flex flex-col gap-10'>
-              <h1 className='text-preset-1'>{country.name?.common}</h1>
+              <h1 className='text-preset-1'>{country.name?.official}</h1>
               <div className='flex flex-col gap-2 sm:flex-row md:gap-10 lg:gap-10'>
                 <div className='flex flex-col gap-2 w-full md:w-1/2'>
                   <p className='text-preset-4-light'>
@@ -105,7 +105,9 @@ const CountryPageContent = () => {
                     <span className='text-preset-4-semi-bold'>Currencies:</span>{' '}
                     {country.currencies &&
                       Object.values(country.currencies)
-                        .map((cur: { name: string; symbol: string }) => cur.name)
+                        .map(
+                          (cur: { name: string; symbol: string }) => cur.name
+                        )
                         .join(', ')}
                   </p>
                   <p className='text-preset-4-light'>

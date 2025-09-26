@@ -1,3 +1,5 @@
+'use client'
+import React from 'react'
 import { Country } from '../utils/types'
 import { useState, useEffect } from 'react'
 import { SearchIcon, DropDownIcon, OpenUpIcon } from '../icons/icons'
@@ -19,8 +21,10 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
     searchTerm: string,
     selectedRegion: string[]
   ) => {
-    let filtered = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+    let filtered = countries.filter(
+      (country) =>
+        country.name.official &&
+        country.name.official.toLowerCase().includes(searchTerm.toLowerCase())
     )
     if (!selectedRegion.includes('All Regions')) {
       filtered = filtered.filter((country) =>

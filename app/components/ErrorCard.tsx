@@ -1,3 +1,4 @@
+import React from 'react'
 import { ErrorIcon } from '../icons/icons'
 
 const ErrorCard = ({ error }: { error: string | null }) => {
