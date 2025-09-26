@@ -3,14 +3,14 @@ import path from 'path'
 
 export async function getIndividualCountry(code: string) {
   try {
-    const response = fetch(
+    const response = await fetch(
       `https://restcountries.com/v3.1/alpha/${code}?fields=name,population,region,subregion,capital,flags,tld,currencies,languages,borders,cca3`
     )
-    if (!(await response).ok) {
+    if (!response.ok) {
       throw new Error('Network response was not ok')
     }
 
-    const returnedResults = (await response).json()
+    const returnedResults = response.json()
 
     return returnedResults
   } catch (error) {
