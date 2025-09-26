@@ -1,10 +1,12 @@
 'use client'
 import { useEffect, useState } from 'react'
+import LoadingIconDiv from './components/LoadingIconDiv'
+import ErrorCard from './components/ErrorCard'
 
 export default function Home() {
   const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>('error')
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/countries')
@@ -24,9 +26,9 @@ export default function Home() {
 
   return (
     <main className='max-w-screen-xl mx-auto my-10'>
-      <h1>Welcome to the Home Page</h1>
-      {loading && <p>Loading countries...</p>}
-      {error && <p className='text-red-500'>{error}</p>}
+      <LoadingIconDiv loading={loading} />
+      <ErrorCard error={error} />
+
       {!loading && !error && (
         <ul>
           {countries.map((country: any) => (
