@@ -4,6 +4,8 @@ import {
   Arrow,
   LightIcon,
   SearchIcon,
+  ErrorIcon,
+  LoadingIcon,
 } from '../icons/icons'
 
 const typographyPresets = [
@@ -60,6 +62,8 @@ const icons = [
   { name: 'DarkIcon', component: <DarkIcon /> },
   { name: 'Arrow', component: <Arrow /> },
   { name: 'SearchIcon', component: <SearchIcon /> },
+  { name: 'LoadingIcon', component: <LoadingIcon /> },
+  { name: 'ErrorIcon', component: <ErrorIcon /> },
 ]
 
 const colorPatches = [
@@ -225,7 +229,7 @@ const ExampleCard = ({ dark }: { dark?: boolean }) => (
 const DesignSystem = () => {
   return (
     <>
-      <main className='p-8 space-y-12 max-w-screen-xl mx-auto'>
+      <main className='py-8 space-y-12 max-w-screen-xl mx-auto w-11/12'>
         <h1 className='text-preset-1 mb-6'>Design System</h1>
 
         {/* Colors */}
