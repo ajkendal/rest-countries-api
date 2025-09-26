@@ -7,13 +7,17 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [Overview](#overview)
 
   - [The challenge](#the-challenge)
+  - [Features](#features)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Getting Started](#getting-started)
 
 - [My process](#my-process)
 
   - [Built with](#built-with)
+  - [API Call Flow](#api-call-flow)
   - [What I learned](#what-i-learned)
+  - [Testing](#testing)
   - [Failsafe Data](#failsafe-data)
   - [Useful resources](#useful-resources)
 
@@ -32,6 +36,15 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode _(optional)_
 
+### Features
+
+- Light/Dark mode toggle
+- Responsive design for all devices
+- Search and filter countries by name and region
+- Border country navigation
+- Failsafe local data fallback
+- Design system page
+
 ### Screenshot
 
 ![Homepage Layout](./public/images/Screenshot%202025-09-26%20at%202.07.06 PM.png)
@@ -41,6 +54,33 @@ Users should be able to:
 - Solution URL: [GitHub Repo](https://github.com/ajkendal/rest-countries-api)
 - Live Site URL: [Live Demo](https://rest-countries-api-ajkendal.vercel.app/)
 - Design System URL: [Design System](https://rest-countries-api-ajkendal.vercel.app/design-system)
+
+### Getting Started
+
+1. Clone the repo:
+
+```sh
+git clone https://github.com/ajkendal/rest-countries-api.git
+cd rest-countries-api
+```
+
+2. Install dependencies:
+
+```sh
+npm install
+```
+
+3. Run the dev server (with Turbopack):
+
+```sh
+npm run dev
+```
+
+4. Run tests:
+
+```sh
+npm test
+```
 
 ## My process
 
@@ -58,6 +98,23 @@ Users should be able to:
 - [Figma](https://www.figma.com/) - Design and prototyping tool
 - [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - For unit and integration testing
 - [Babel](https://babeljs.io/) - Used for transpiling code during testing with Jest
+
+### API Call Flow
+
+```mermaid
+flowchart TD
+  A[User visits homepage] --> B[Fetch countries from REST Countries API]
+  B -- Success --> C[Display countries]
+  B -- Failure --> D[Fetch countries from local data.json]
+  D --> C
+  C --> E[User searches/filter]
+  E --> F[Filter countries client-side]
+  C --> G[User clicks country card]
+  G --> H[Fetch country details from API or local data]
+  H --> I[Display country details]
+  I --> J[User clicks border country]
+  J --> H
+```
 
 ### What I learned
 
@@ -83,6 +140,16 @@ if (!mounted) return null // Prevents hydration errors
 ```
 
 This project reinforced best practices in React/Next.js development, error handling, and modern CSS workflows.
+
+### Testing
+
+This project uses Jest and React Testing Library for unit and integration tests. Babel is required for testing Next.js app directory components. The test and dev scripts automatically switch the Babel config as needed.
+
+To run tests:
+
+```sh
+npm test
+```
 
 ### Failsafe Data
 
