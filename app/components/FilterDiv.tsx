@@ -13,7 +13,7 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
   const [selectedRegion, setSelectedRegion] = useState<string[]>([
     'All Regions',
   ])
-  // Extracted filtering logic
+
   const getFilteredCountries = (
     countries: Country[],
     searchTerm: string,
@@ -80,11 +80,6 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
                   onClick={() => {
                     if (region === 'All Regions') {
                       setSelectedRegion(['All Regions'])
-                      onFilter(
-                        getFilteredCountries(countries, searchTerm, [
-                          'All Regions',
-                        ])
-                      )
                     } else {
                       let newSelected
                       if (isSelected) {
@@ -95,9 +90,6 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
                           .concat(region)
                       }
                       setSelectedRegion(newSelected)
-                      onFilter(
-                        getFilteredCountries(countries, searchTerm, newSelected)
-                      )
                     }
                     setIsOpen(false)
                   }}
