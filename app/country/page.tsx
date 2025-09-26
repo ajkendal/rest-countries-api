@@ -1,12 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import LoadingIconDiv from '../components/LoadingIconDiv'
 import ErrorCard from '../components/ErrorCard'
 import { Country } from '../utils/types'
 
 const CountryPage = () => {
-  const { code } = useParams<{ code: string }>()
+  const searchParams = useSearchParams()
+  const code = searchParams.get('code')
   const router = useRouter()
   const [country, setCountry] = useState<Country | null>(null)
   const [loading, setLoading] = useState(true)

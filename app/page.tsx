@@ -4,6 +4,7 @@ import LoadingIconDiv from './components/LoadingIconDiv'
 import ErrorCard from './components/ErrorCard'
 import { Country } from './utils/types'
 import FilterDiv from './components/FilterDiv'
+import CountryCard from './components/CountryCard'
 
 export default function Home() {
   const [countries, setCountries] = useState<Country[]>([])
@@ -43,11 +44,11 @@ export default function Home() {
             </p>
           </div>
         ) : (
-          <ul>
+          <div className='flex flex-col items-center sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20'>
             {filteredCountries.map((country: Country) => (
-              <li key={country.name.common}>{country.name.common}</li>
+              <CountryCard key={country.name.common} country={country} />
             ))}
-          </ul>
+          </div>
         ))}
     </main>
   )
