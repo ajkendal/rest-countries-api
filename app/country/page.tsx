@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import LoadingIconDiv from '../components/LoadingIconDiv'
 import ErrorCard from '../components/ErrorCard'
 import { Country } from '../utils/types'
+import { Suspense } from 'react'
 
 const CountryPage = () => {
   const searchParams = useSearchParams()
@@ -34,17 +35,19 @@ const CountryPage = () => {
   }, [code, router])
 
   return (
-    <main className='max-w-screen-xl mx-auto my-10'>
-      <LoadingIconDiv loading={loading} />
-      <ErrorCard error={error} />
+    <Suspense fallback={<LoadingIconDiv loading={true} />}>
+      <main className='max-w-screen-xl mx-auto my-10'>
+        <LoadingIconDiv loading={loading} />
+        <ErrorCard error={error} />
 
-      {country && (
-        <div>
-          <h2>{country.name?.common}</h2>
-          {/* Add more country details here */}
-        </div>
-      )}
-    </main>
+        {country && (
+          <div>
+            <h2>{country.name?.common}</h2>
+            {/* Add more country details here */}
+          </div>
+        )}
+      </main>
+    </Suspense>
   )
 }
 
