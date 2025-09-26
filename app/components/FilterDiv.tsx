@@ -15,11 +15,17 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
   ])
 
   useEffect(() => {
-    const filtered = countries.filter((country) =>
+    let filtered = countries.filter((country) =>
       country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
     )
+
+    if (!selectedRegion.includes('All Regions')) {
+      filtered = filtered.filter((country) =>
+        selectedRegion.includes(country.region)
+      )
+    }
     onFilter(filtered)
-  }, [searchTerm, countries, onFilter])
+  }, [searchTerm, countries, selectedRegion, onFilter])
 
   const searchInput = () => {
     return (
