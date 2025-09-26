@@ -101,7 +101,7 @@ export const LoadingIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     width='200px'
     height='200px'
-    className='block mxAuto'
+    className='block mx-auto'
     viewBox='0 0 200 200'
   >
     <circle strokeWidth='15' r='15' cx='40' cy='65'>
