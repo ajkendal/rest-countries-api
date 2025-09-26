@@ -78,6 +78,7 @@ To see how you can add code snippets, see below:
 ```css
 .proud-of-this-css {
   color: papayawhip;
+console.log
 }
 ```
 

@@ -1,4 +1,7 @@
 export type Country = {
-  name: { common: string }
+  name: {
+    [x: string]: any
+    common: string
+  }
   [key: string]: any
 }

@@ -2,7 +2,6 @@ import { Country } from '../utils/types'
 import Link from 'next/link'
 
 const CountryCard = ({ country }: { country: Country }) => {
-  console.log(country)
   return (
     <Link href={`/country?code=${country.alpha3Code}`}>
       <div

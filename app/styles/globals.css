@@ -90,3 +90,9 @@ body {
   @apply flex items-center gap-2;
   @apply cursor-pointer;
 }
+
+.btn-country-code {
+  @apply bg-white dark:bg-blue-900 shadow py-2 px-3 rounded-sm;
+  @apply hover:brightness-95 dark:hover:brightness-125;
+  @apply cursor-pointer;
+}
