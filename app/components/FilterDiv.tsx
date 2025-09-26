@@ -13,18 +13,25 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
   const [selectedRegion, setSelectedRegion] = useState<string[]>([
     'All Regions',
   ])
-
-  useEffect(() => {
+  // Extracted filtering logic
+  const getFilteredCountries = (
+    countries: Country[],
+    searchTerm: string,
+    selectedRegion: string[]
+  ) => {
     let filtered = countries.filter((country) =>
       country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
     )
-
     if (!selectedRegion.includes('All Regions')) {
       filtered = filtered.filter((country) =>
-        selectedRegion.includes(country.region)
+        selectedRegion.includes(country.region || 'Unknown')
       )
     }
-    onFilter(filtered)
+    return filtered
+  }
+
+  useEffect(() => {
+    onFilter(getFilteredCountries(countries, searchTerm, selectedRegion))
   }, [searchTerm, countries, selectedRegion, onFilter])
 
   const searchInput = () => {
@@ -73,7 +80,11 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
                   onClick={() => {
                     if (region === 'All Regions') {
                       setSelectedRegion(['All Regions'])
-                      onFilter(countries)
+                      onFilter(
+                        getFilteredCountries(countries, searchTerm, [
+                          'All Regions',
+                        ])
+                      )
                     } else {
                       let newSelected
                       if (isSelected) {
@@ -84,10 +95,9 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
                           .concat(region)
                       }
                       setSelectedRegion(newSelected)
-                      const filtered = countries.filter((country) =>
-                        newSelected.includes(country.region)
+                      onFilter(
+                        getFilteredCountries(countries, searchTerm, newSelected)
                       )
-                      onFilter(newSelected.length === 0 ? countries : filtered)
                     }
                     setIsOpen(false)
                   }}
