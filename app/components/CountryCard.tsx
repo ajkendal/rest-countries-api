@@ -23,7 +23,7 @@ const CountryCard = ({ country }: { country: Country }) => {
             <span className='text-preset-4-semi-bold'>Region:</span>{' '}
             {country.region}
           </p>
-          {country.capital.length > 0 && (
+          {country.capital && country.capital.length > 0 && (
             <p className='text-preset-4-light'>
               <span className='text-preset-4-semi-bold'>Capital:</span>{' '}
               {country.capital?.join(', ')}

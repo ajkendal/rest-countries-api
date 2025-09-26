@@ -72,9 +72,11 @@ const CountryPageContent = () => {
                       Native Name:
                     </span>{' '}
                     {
-                      country.name?.nativeName[
-                        Object.keys(country.name?.nativeName)[0]
-                      ]?.common
+                      country.name?.nativeName
+                        ? country.name?.nativeName[
+                            Object.keys(country.name.nativeName)[0]
+                          ]?.common
+                        : ''
                     }
                   </p>
                   <p className='text-preset-4-light'>
