@@ -16,5 +16,4 @@ export type Country = {
   languages?: Record<string, string>
   currencies?: Record<string, { name: string; symbol: string }>
   flags?: { png?: string; svg?: string }
-  // Removed overly permissive catch-all property for better type safety
 }
