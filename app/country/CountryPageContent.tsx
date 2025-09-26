@@ -71,13 +71,11 @@ const CountryPageContent = () => {
                     <span className='text-preset-4-semi-bold'>
                       Native Name:
                     </span>{' '}
-                    {
-                      country.name?.nativeName
-                        ? country.name?.nativeName[
-                            Object.keys(country.name.nativeName)[0]
-                          ]?.common
-                        : ''
-                    }
+                    {country.name?.nativeName
+                      ? country.name?.nativeName[
+                          Object.keys(country.name.nativeName)[0]
+                        ]?.common
+                      : ''}
                   </p>
                   <p className='text-preset-4-light'>
                     <span className='text-preset-4-semi-bold'>Population:</span>{' '}
@@ -101,7 +99,7 @@ const CountryPageContent = () => {
                     <span className='text-preset-4-semi-bold'>
                       Top Level Domain:
                     </span>{' '}
-                    {country.tld?.[0]}
+                    {Array.isArray(country.tld) ? country.tld[0] : ''}
                   </p>
                   <p className='text-preset-4-light'>
                     <span className='text-preset-4-semi-bold'>Currencies:</span>{' '}
@@ -124,7 +122,8 @@ const CountryPageContent = () => {
                   Border Countries:
                 </h2>
                 <div className='flex flex-wrap gap-2 mt-2 md:mt-0'>
-                  {country.borders && country.borders.length > 0 ? (
+                  {Array.isArray(country.borders) &&
+                  country.borders.length > 0 ? (
                     country.borders.map((borderCode: string) => {
                       const borderCountry = allCountries.find(
                         (c) => c.alpha3Code === borderCode

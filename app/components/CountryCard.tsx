@@ -6,7 +6,7 @@ const CountryCard = ({ country }: { country: Country }) => {
     <Link href={`/country?code=${country.alpha3Code}`}>
       <div
         className='bg-white dark:bg-blue-900 rounded shadow w-[16.5rem] h-[21.5rem] group hover:bg-gray-50 dark:hover:bg-blue-950'
-        key={country.alpha3Code}
+        key={String(country.alpha3Code)}
       >
         <img
           src={country.flags?.svg || ''}
