@@ -34,15 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Homepage Layout](./public/images/Screenshot%202025-09-26%20at%202.07.06 PM.png)
 
 ### Links
 
@@ -67,29 +59,28 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Throughout this project, I learned and applied several key concepts:
 
-To see how you can add code snippets, see below:
+- **Next.js App Directory:** Leveraged the new app directory for server/client separation, routing, and layout management.
+- **Fallback Data Strategy:** Implemented a failsafe mechanism to use local `data.json` if the REST Countries API is unavailable, ensuring reliability.
+- **Theme Switching:** Integrated `next-themes` and Tailwind CSS to provide seamless light/dark mode toggling with hydration guard to prevent SSR/client mismatches.
+- **Responsive Design:** Used Tailwind CSS and Flexbox/Grid to create a mobile-first, fully responsive UI that adapts to all device sizes.
+- **Dynamic Filtering & Sorting:** Built custom dropdowns and search/filter logic for countries and regions, including combining 'All Regions' and specific regions.
+- **Border Country Lookup:** Translated border country codes to names and enabled navigation between countries.
+- **Hydration Error Prevention:** Applied hydration guards and conditional rendering to eliminate hydration errors from theme toggling and dynamic content.
+- **Reusable Components:** Developed modular components (Header, CountryCard, ErrorCard, LoadingIconDiv) for maintainable and scalable code.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Example: Hydration Guard for Theme Toggle
 
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const [mounted, setMounted] = useState(false)
+useEffect(() => {
+  setMounted(true)
+}, [])
+if (!mounted) return null // Prevents hydration errors
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+This project reinforced best practices in React/Next.js development, error handling, and modern CSS workflows.
 
 ### Failsafe Data
 

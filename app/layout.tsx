@@ -23,7 +23,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <main className='mt-28'>{children}</main>
         </ThemeProvider>
       </body>
     </html>
