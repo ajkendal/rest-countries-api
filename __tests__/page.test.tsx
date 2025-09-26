@@ -22,11 +22,11 @@ describe('HomePage', () => {
     )
   })
 
-  it('renders homepage content', () => {
+  it('renders homepage content', async () => {
     render(<HomePage />)
     expect(
-      screen.getByPlaceholderText(/search for a country/i)
+      await screen.findByPlaceholderText(/search for a country/i)
     ).toBeInTheDocument()
-    expect(screen.getByText(/filter by region/i)).toBeInTheDocument()
+    expect(await screen.findByText(/filter by region/i)).toBeInTheDocument()
   })
 })

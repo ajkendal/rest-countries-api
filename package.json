@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next dev --turbopack",
-    "build": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next build --turbopack",
-    "start": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next start",
-    "test": "mv babel.config.js.test babel.config.js 2>/dev/null || true && jest && mv babel.config.js babel.config.js.test 2>/dev/null || true"
+    "dev": "shx mv babel.config.js babel.config.js.test || true && next dev --turbopack",
+    "build": "shx mv babel.config.js babel.config.js.test || true && next build --turbopack",
+    "start": "shx mv babel.config.js babel.config.js.test || true && next start",
+    "test": "shx mv babel.config.js.test babel.config.js || true && jest && shx mv babel.config.js babel.config.js.test || true"
   },
   "dependencies": {
     "next": "15.5.3",
@@ -30,6 +30,7 @@
     "babel-jest": "^30.1.2",
     "jest": "^30.1.3",
     "jest-environment-jsdom": "^30.1.2",
+    "shx": "^0.4.0",
     "tailwindcss": "^4.1.13",
     "ts-jest": "^29.4.4",
     "typescript": "^5"
