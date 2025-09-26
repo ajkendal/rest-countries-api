@@ -14,7 +14,7 @@ const CountryCard = ({ country }: { country: Country }) => {
           alt={`Flag of ${country.name?.common}`}
           className='w-full h-[10rem] object-cover rounded group-hover:opacity-75 transition-opacity'
         />
-        <div className='p-4'>
+        <div className='p-5'>
           <h3 className='text-preset-3 mb-3'>{country.name?.common}</h3>
           <p className='text-preset-4-light'>
             <span className='text-preset-4-semi-bold'>Population:</span>{' '}
