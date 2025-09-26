@@ -4,8 +4,8 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import FilterDiv from '../app/components/FilterDiv'
 
 const mockCountries = [
-  { name: { common: 'Canada' }, region: 'Americas' },
-  { name: { common: 'France' }, region: 'Europe' },
+  { name: { common: 'Canada', official: 'Canada' }, region: 'Americas' },
+  { name: { common: 'France', official: 'France' }, region: 'Europe' },
 ]
 
 describe('FilterDiv', () => {
@@ -23,7 +23,7 @@ describe('FilterDiv', () => {
       target: { value: 'can' },
     })
     expect(handleFilter).toHaveBeenCalledWith([
-      { name: { common: 'Canada' }, region: 'Americas' },
+      { name: { common: 'Canada', official: 'Canada' }, region: 'Americas' },
     ])
   })
 })
