@@ -10,7 +10,7 @@ export async function getIndividualCountry(code: string) {
       throw new Error('Network response was not ok')
     }
 
-    const returnedResults = response.json()
+    const returnedResults = await response.json()
 
     return returnedResults
   } catch (error) {
