@@ -4,10 +4,18 @@ import { useParams } from 'next/navigation'
 import LoadingIconDiv from '../components/LoadingIconDiv'
 import ErrorCard from '../components/ErrorCard'
 
+interface Country {
+  name: {
+    common: string
+    [key: string]: any
+  }
+  // Add more properties as needed based on API response
+}
+
 const CountryPage = () => {
   const { code: paramCode } = useParams<{ code: string }>()
   const code = paramCode || 'USA'
-  const [country, setCountry] = useState<any>(null)
+  const [country, setCountry] = useState<Country | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
