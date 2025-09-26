@@ -114,7 +114,7 @@ const CountryPageContent = () => {
                     <span className='text-preset-4-semi-bold'>Languages:</span>{' '}
                     {country.languages &&
                       Object.values(country.languages)
-                        .map((lang: any) => lang)
+                        .map((lang: string) => lang)
                         .join(', ')}
                   </p>
                 </div>
