@@ -1,8 +1,5 @@
 import { sortCountriesByName } from './sortCountries'
-type Country = {
-  name: { common: string }
-  [key: string]: any
-}
+import { Country } from './types'
 
 export const sortByRegion = (countries: Country[], regions: string[] = []) => {
   const filtered =

@@ -1,7 +1,4 @@
-type Country = {
-  name: { common: string }
-  [key: string]: any
-}
+import { Country } from './types'
 
 export function sortAndAddAlpha3Code(countries: Country[]) {
   return addAlpha3Code(sortCountriesByName([...countries]))

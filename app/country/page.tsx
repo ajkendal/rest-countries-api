@@ -1,25 +1,22 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import LoadingIconDiv from '../components/LoadingIconDiv'
 import ErrorCard from '../components/ErrorCard'
-
-interface Country {
-  name: {
-    common: string
-    [key: string]: any
-  }
-  // Add more properties as needed based on API response
-}
+import { Country } from '../utils/types'
 
 const CountryPage = () => {
-  const { code: paramCode } = useParams<{ code: string }>()
-  const code = paramCode || 'USA'
+  const { code } = useParams<{ code: string }>()
+  const router = useRouter()
   const [country, setCountry] = useState<Country | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!code) {
+      router.replace('/')
+      return
+    }
     fetch(`/api/country?code=${code}`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch country')
@@ -33,7 +30,7 @@ const CountryPage = () => {
         setError(err.message)
         setLoading(false)
       })
-  }, [code])
+  }, [code, router])
 
   return (
     <main className='max-w-screen-xl mx-auto my-10'>

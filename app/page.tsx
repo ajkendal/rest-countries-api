@@ -2,9 +2,10 @@
 import { useEffect, useState } from 'react'
 import LoadingIconDiv from './components/LoadingIconDiv'
 import ErrorCard from './components/ErrorCard'
+import { Country } from './utils/types'
 
 export default function Home() {
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState<Country[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -31,7 +32,7 @@ export default function Home() {
 
       {!loading && !error && (
         <ul>
-          {countries.map((country: any) => (
+          {countries.map((country: Country) => (
             <li key={country.name.common}>{country.name.common}</li>
           ))}
         </ul>
