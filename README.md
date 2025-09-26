@@ -56,6 +56,8 @@ Users should be able to:
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [REST Countries API](https://restcountries.com/) - Country data API
 - [Figma](https://www.figma.com/) - Design and prototyping tool
+- [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - For unit and integration testing
+- [Babel](https://babeljs.io/) - Used for transpiling code during testing with Jest
 
 ### What I learned
 
