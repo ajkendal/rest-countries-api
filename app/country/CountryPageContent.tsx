@@ -61,11 +61,16 @@ const CountryPageContent = () => {
             <img
               src={country.flags?.svg || country.flags?.png}
               alt={`${country.name?.common} flag`}
+              role='img'
+              aria-label={`Flag of ${country.name?.common}`}
               className='w-full md:w-1/2 lg:w-1/2 h-auto object-contain rounded'
             />
             <div className='w-full md:w-1/2 lg:w-1/2 flex flex-col gap-10'>
               <h1 className='text-preset-1'>{country.name?.official}</h1>
-              <div className='flex flex-col gap-2 sm:flex-row md:gap-10 lg:gap-10'>
+              <section
+                aria-label='General country information'
+                className='flex flex-col gap-2 sm:flex-row md:gap-10 lg:gap-10'
+              >
                 <div className='flex flex-col gap-2 w-full md:w-1/2'>
                   <p className='text-preset-4-light'>
                     <span className='text-preset-4-semi-bold'>
@@ -118,7 +123,7 @@ const CountryPageContent = () => {
                         .join(', ')}
                   </p>
                 </div>
-              </div>
+              </section>
               <div className='flex flex-row items-start gap-4'>
                 <h2 className='text-preset-4-semi-bold w-min-content whitespace-nowrap self-center'>
                   Border Countries:

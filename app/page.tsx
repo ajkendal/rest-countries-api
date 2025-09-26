@@ -31,26 +31,44 @@ export default function Home() {
   }, [])
 
   return (
-    <div className='max-w-screen-xl mx-auto my-10 w-11/12'>
-      <FilterDiv countries={countries} onFilter={setFilteredCountries} />
-      <LoadingIconDiv loading={loading} />
-      <ErrorCard error={error} />
+    <main
+      className='max-w-screen-xl mx-auto my-10 w-11/12'
+      role='main'
+      aria-label='Country list main content'
+    >
+      <header>
+        <h1 className='sr-only'>Rest Countries API</h1>
+      </header>
+      <section aria-label='Filter countries'>
+        <FilterDiv countries={countries} onFilter={setFilteredCountries} />
+      </section>
+      <section aria-live='polite' aria-atomic='true'>
+        <LoadingIconDiv loading={loading} />
+        <ErrorCard error={error} />
+      </section>
 
       {!loading &&
         !error &&
         (filteredCountries.length === 0 ? (
-          <div className='flex items-center justify-center min-h-[40vh] w-full'>
-            <p className='text-preset-1 italic text-center'>
+          <section
+            className='flex items-center justify-center min-h-[40vh] w-full'
+            aria-live='polite'
+            aria-atomic='true'
+          >
+            <p className='text-preset-1 italic text-center' role='status'>
               No countries found.
             </p>
-          </div>
+          </section>
         ) : (
-          <div className='flex flex-col items-center sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20'>
+          <section
+            className='flex flex-col items-center sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20'
+            aria-label='Country cards'
+          >
             {filteredCountries.map((country: Country) => (
               <CountryCard key={country.name.common} country={country} />
             ))}
-          </div>
+          </section>
         ))}
-    </div>
+    </main>
   )
 }
