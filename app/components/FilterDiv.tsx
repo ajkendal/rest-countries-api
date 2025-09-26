@@ -1,3 +1,5 @@
+'use client'
+import React from 'react'
 import { Country } from '../utils/types'
 import { useState, useEffect } from 'react'
 import { SearchIcon, DropDownIcon, OpenUpIcon } from '../icons/icons'

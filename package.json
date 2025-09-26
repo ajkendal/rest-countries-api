@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start"
+    "dev": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next dev --turbopack",
+    "build": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next build --turbopack",
+    "start": "mv babel.config.js babel.config.js.test 2>/dev/null || true && next start",
+    "test": "mv babel.config.js.test babel.config.js 2>/dev/null || true && jest && mv babel.config.js babel.config.js.test 2>/dev/null || true"
   },
   "dependencies": {
     "next": "15.5.3",
@@ -15,11 +16,22 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
     "@tailwindcss/postcss": "^4.1.13",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-jest": "^30.1.2",
+    "jest": "^30.1.3",
+    "jest-environment-jsdom": "^30.1.2",
     "tailwindcss": "^4.1.13",
+    "ts-jest": "^29.4.4",
     "typescript": "^5"
   }
 }

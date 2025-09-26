@@ -1,3 +1,4 @@
+import React from 'react'
 import { LoadingIcon } from '../icons/icons'
 
 const LoadingIconDiv = ({ loading }: { loading: boolean }) => {
