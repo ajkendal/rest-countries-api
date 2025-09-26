@@ -24,6 +24,6 @@ export async function getIndividualCountry(code: string) {
       (country: { alpha3Code: string }) => country.alpha3Code === code
     )
 
-    return country
+    return country ? [country] : []
   }
 }
