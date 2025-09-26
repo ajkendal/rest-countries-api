@@ -50,7 +50,7 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
           </span>
         </button>
         {isOpen && (
-          <div className='absolute top-full left-0 mt-2 bg-white dark:bg-blue-900 shadow rounded w-48 z-10'>
+          <div className='absolute top-full right-0 mt-2 bg-white dark:bg-blue-900 shadow rounded w-48 z-10'>
             {[
               'All Regions',
               'Africa',
