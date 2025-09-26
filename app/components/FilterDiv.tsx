@@ -23,8 +23,12 @@ const FilterDiv = ({ countries, onFilter }: FilterDivProps) => {
   ) => {
     let filtered = countries.filter(
       (country) =>
-        country.name.official &&
-        country.name.official.toLowerCase().includes(searchTerm.toLowerCase())
+        (country.name.official &&
+          country.name.official
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())) ||
+        (country.name.common &&
+          country.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
     )
     if (!selectedRegion.includes('All Regions')) {
       filtered = filtered.filter((country) =>
