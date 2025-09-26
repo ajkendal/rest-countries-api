@@ -105,7 +105,7 @@ const CountryPageContent = () => {
                     <span className='text-preset-4-semi-bold'>Currencies:</span>{' '}
                     {country.currencies &&
                       Object.values(country.currencies)
-                        .map((cur: any) => cur.name)
+                        .map((cur: { name: string; symbol: string }) => cur.name)
                         .join(', ')}
                   </p>
                   <p className='text-preset-4-light'>
